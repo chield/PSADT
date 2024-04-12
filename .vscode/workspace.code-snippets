@@ -1,0 +1,14 @@
+{
+	"execute-msi": {
+		"prefix": "execute-msi",
+		"body": "Execute-MSI -Action 'Install' -path '$dirfiles\\file'",
+		"description": "Execute-MSI command"
+	}
+},
+{
+	"execute-msi": {
+		"prefix": "remove-file",
+		"body": "Remove-File -Path 'C:\Users\Public\Desktop\appname.lnk'",
+		"description": "Remove-File command"
+	}
+}
