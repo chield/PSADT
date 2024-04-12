@@ -13,7 +13,7 @@
         "COPYING.Lesser": true,
         "LICENSE": true,
         "mkdocs.yml": true,
-        "PSAppDeployToolkit.pdf": false,
+        "PSAppDeployToolkit.pdf": true,
         "README.md": true,
         "TODO.txt": true,
         "wiki": true,
