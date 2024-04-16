@@ -106,19 +106,19 @@ Try {
     ##* VARIABLE DECLARATION
     ##*===============================================
     ## TODO Variables: Application
-    [String]$appVendor = ''
-    [String]$appName = ''
-    [String]$appVersion = ''
-    [String]$appArch = ''
+    [String]$appVendor = 'Notepad++'
+    [String]$appName = ' Notepad++'
+    [String]$appVersion = '8.6.4'
+    [String]$appArch = 'x64'
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = 'xx/xx/2024'
+    [String]$appScriptDate = '12/04/2024'
     [String]$appScriptAuthor = 'Michiel Dekker'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
     [String]$installName = ''
-    [String]$installTitle = ''
+    [String]$installTitle = 'Notepad++ version 8.6.4'
 
     ##* Do not modify section below
     #region DoNotModify
@@ -206,6 +206,7 @@ Try {
 
         ## TODO <Perform Installation tasks here>
 
+        Execute-Process -Path 'npp.8.6.4.Installer.x64.exe' -Parameters '/S /noUpdater'
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -250,6 +251,7 @@ Try {
 
         ## TODO <Perform Uninstallation tasks here>
 
+        "C:\Program Files\Notepad++\uninstall.exe"
 
         ##*===============================================
         ##* POST-UNINSTALLATION
