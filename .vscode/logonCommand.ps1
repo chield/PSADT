@@ -1,5 +1,5 @@
 # TODO Add application name
-$Application = "7-Zip"
+$Application = "ApplicationName"
 
 Write-host "Testing has started..." -ForegroundColor Cyan
 Start-Process -FilePath "C:\Users\WDAGUtilityAccount\Desktop\$Application\Deploy-Application.exe" -Wait

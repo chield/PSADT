@@ -8,7 +8,7 @@ Get-installedModule -Name IntuneWin32App
 Connect-MSIntuneGraph -TenantID "interstellar.nl" -Verbose
 
     # TODO Fill in the variables
-    $Publisher = "TNTERSTELLAR"
+    $Publisher = "INTERSTELLAR"
     $IntuneWinFile = "$Desktop\$Application\$Application.intunewin"
     $AppIconFile = "C:\Stuff\test-icon.png"
     $Appversion = "1.00"
@@ -28,8 +28,8 @@ Connect-MSIntuneGraph -TenantID "interstellar.nl" -Verbose
     $Icon = New-IntuneWin32AppIcon -FilePath $AppIconFile
     
     # Add new EXE Win32 app
-    $InstallCommandLine = 'Deploy-Application.exe DeploymentType "Install" -DeployMode "Silent"'
-    $UninstallCommandLine = 'Deploy-Application.exe DeploymentType "Uninstall" -DeployMode "Silent"'
+    $InstallCommandLine = '.\Deploy-Application.exe -DeploymentType "Install" -DeployMode "Silent"'
+    $UninstallCommandLine = '.\Deploy-Application.exe -DeploymentType "Uninstall" -DeployMode "Silent"'
     # TODO Add app description
     Add-IntuneWin32App -FilePath $IntuneWinFile -DisplayName $DisplayName -Description "TEST Application name" -AppVersion $Appversion -Publisher $Publisher -InstallExperience "system" -RestartBehavior "suppress" -DetectionRule $DetectionRule -RequirementRule $RequirementRule -InstallCommandLine $InstallCommandLine -UninstallCommandLine $UninstallCommandLine -Icon $Icon -Verbose
 
