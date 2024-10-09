@@ -1,0 +1,17 @@
+<Configuration ID="be65f9c6-a98c-4787-be6a-1f06dffa13e1">
+  <Add OfficeClientEdition="64" Channel="Current" MigrateArch="TRUE">
+    <Product ID="ProjectProRetail">
+      <Language ID="en-us" />
+      <Language ID="nl-nl" />
+    </Product>
+  </Add>
+  <Property Name="SharedComputerLicensing" Value="0" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="TRUE" />
+  <Property Name="DeviceBasedLicensing" Value="0" />
+  <Property Name="SCLCacheOverride" Value="0" />
+  <Updates Enabled="TRUE" />
+  <AppSettings>
+    <Setup Name="Company" Value="INTERSTELLAR" />
+  </AppSettings>
+  <Display Level="None" AcceptEULA="TRUE" />
+</Configuration>

@@ -106,19 +106,19 @@ Try {
     ##* VARIABLE DECLARATION
     ##*===============================================
     ## TODO Variables: Application
-    [String]$appVendor = ''
-    [String]$appName = ''
-    [String]$appVersion = ''
-    [String]$appArch = ''
+    [String]$appVendor = 'Microsoft'
+    [String]$appName = 'Project'
+    [String]$appVersion = 'Latest'
+    [String]$appArch = 'x64'
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = 'xx/xx/2024'
+    [String]$appScriptDate = '09/10/2024'
     [String]$appScriptAuthor = 'Michiel Dekker'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
-    [String]$installName = ''
-    [String]$installTitle = ''
+    [String]$installName = 'Project'
+    [String]$installTitle = 'Installing MS Project'
 
     ##* Do not modify section below
     #region DoNotModify
@@ -181,7 +181,7 @@ Try {
         [String]$installPhase = 'Pre-Installation'
 
         ## TODO Show Welcome Message, close Internet Explorer if required, allow up to 3 deferrals, verify there is enough disk space to complete the install, and persist the prompt
-        Show-InstallationWelcome -CloseApps 'iexplore' -AllowDefer -DeferTimes 3 -CheckDiskSpace -PersistPrompt
+        Show-InstallationWelcome -CloseApps 'excel,groove,onenote,outlook,mspub,powerpnt,winword,iexplore,teams,visio,winproj' -CheckDiskSpace -PersistPrompt		
 
         ## TODO Show Progress Message (with the default message)
         Show-InstallationProgress
@@ -205,7 +205,7 @@ Try {
         }
 
         ## TODO <Perform Installation tasks here>
-
+        Execute-Process -Path "$dirFiles\setup.exe" -Parameters "/CONFIGURE InstallO365withProject.xml"
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -227,12 +227,13 @@ Try {
         [String]$installPhase = 'Pre-Uninstallation'
 
         ## TODO Show Welcome Message, close Internet Explorer with a 60 second countdown before automatically closing
-        Show-InstallationWelcome -CloseApps 'iexplore' -CloseAppsCountdown 60
+        Show-InstallationWelcome -CloseApps 'excel,groove,onenote,outlook,mspub,powerpnt,winword,iexplore,teams,visio,winproj'  -CloseAppsCountdown 60
 
         ## TODO Show Progress Message (with the default message)
         Show-InstallationProgress
 
         ## TODO <Perform Pre-Uninstallation tasks here>
+		Execute-Process -Path "$dirFiles\setup.exe" -Parameters "/CONFIGURE RemoveProject.xml"
 
 
         ##*===============================================
