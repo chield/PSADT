@@ -108,12 +108,12 @@ Try {
     ## TODO Variables: Application
     [String]$appVendor = 'Tungsten'
     [String]$appName = 'Printix Client'
-    [String]$appVersion = '2.2.1.75'
+    [String]$appVersion = '2.4.0.116'
     [String]$appArch = ''
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = '27/08/2024'
+    [String]$appScriptDate = '31/10/2024'
     [String]$appScriptAuthor = 'Michiel Dekker'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
@@ -188,6 +188,7 @@ Try {
 
         ## TODO <Perform Pre-Installation tasks here>
 
+        Execute-Process -Path "$dirfiles\windowsdesktop-runtime-6.0.35-win-x64.exe" -Parameters "/install /quiet /norestart"
 
         ##*===============================================
         ##* INSTALLATION
