@@ -108,12 +108,12 @@ Try {
     ## TODO Variables: Application
     [String]$appVendor = 'Tungsten'
     [String]$appName = 'Printix Client'
-    [String]$appVersion = '2.4.0.116'
+    [String]$appVersion = '2025.1.0.117'
     [String]$appArch = ''
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = '31/10/2024'
+    [String]$appScriptDate = '6/11/2024'
     [String]$appScriptAuthor = 'Michiel Dekker'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
@@ -188,7 +188,7 @@ Try {
 
         ## TODO <Perform Pre-Installation tasks here>
 
-        Execute-Process -Path "$dirfiles\windowsdesktop-runtime-6.0.35-win-x64.exe" -Parameters "/install /quiet /norestart"
+        Execute-Process -Path "$dirfiles\windowsdesktop-runtime-8.0.10-win-x64.exe" -Parameters "/install /quiet /norestart"
 
         ##*===============================================
         ##* INSTALLATION
@@ -208,8 +208,6 @@ Try {
         ## TODO <Perform Installation tasks here>
 
         Execute-MSI -FilePath "$dirFiles\CLIENT_{interstellar.printix.net}_{316e9eb9-d3b1-487f-8091-1bb6be72d3b6}.MSI" -Parameters 'WRAPPED_ARGUMENTS=/id:316e9eb9-d3b1-487f-8091-1bb6be72d3b6'
-
-        
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -254,6 +252,7 @@ Try {
 
         ## TODO <Perform Uninstallation tasks here>
 
+        Execute-Process -Path "C:\Program Files\printix.net\Printix Client\unins000.exe" -Parameters "/SILENT"
 
         ##*===============================================
         ##* POST-UNINSTALLATION
