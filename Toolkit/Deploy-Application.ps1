@@ -107,13 +107,13 @@ Try {
     ##*===============================================
     ## TODO Variables: Application
     [String]$appVendor = ''
-    [String]$appName = ''
-    [String]$appVersion = ''
+    [String]$appName = 'Snaketail'
+    [String]$appVersion = '1.9.8'
     [String]$appArch = ''
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = 'xx/xx/2024'
+    [String]$appScriptDate = '07/11/2024'
     [String]$appScriptAuthor = 'Michiel Dekker'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
@@ -206,6 +206,7 @@ Try {
 
         ## TODO <Perform Installation tasks here>
 
+        Execute-MSI -Action 'Install' -path "$dirfiles\SnakeTail.v1.9.8.x64.msi"
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -250,6 +251,7 @@ Try {
 
         ## TODO <Perform Uninstallation tasks here>
 
+        Execute-MSI -Action 'Uninstall' -Path '{47A15D85-7391-454F-A97C-35735B8E66EB}'
 
         ##*===============================================
         ##* POST-UNINSTALLATION
