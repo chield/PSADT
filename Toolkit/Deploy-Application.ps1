@@ -106,14 +106,14 @@ Try {
     ##* VARIABLE DECLARATION
     ##*===============================================
     ## TODO Variables: Application
-    [String]$appVendor = ''
-    [String]$appName = ''
-    [String]$appVersion = ''
+    [String]$appVendor = 'Audiocodes'
+    [String]$appName = 'SYS Logviewer'
+    [String]$appVersion = '2.25'
     [String]$appArch = ''
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = 'xx/xx/2024'
+    [String]$appScriptDate = '07/11/2024'
     [String]$appScriptAuthor = 'Michiel Dekker'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
@@ -206,7 +206,8 @@ Try {
 
         ## TODO <Perform Installation tasks here>
 
-
+        Execute-process -Path "$dirfiles\syslogViewer-setup.exe" -Parameters '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART' -WindowStyle 'Hidden'
+        
         ##*===============================================
         ##* POST-INSTALLATION
         ##*===============================================
@@ -250,6 +251,7 @@ Try {
 
         ## TODO <Perform Uninstallation tasks here>
 
+        Execute-Process -Path "C:\Program Files\syslogViewer\unins000.exe"
 
         ##*===============================================
         ##* POST-UNINSTALLATION
