@@ -106,14 +106,14 @@ Try {
     ##* VARIABLE DECLARATION
     ##*===============================================
     ## TODO Variables: Application
-    [String]$appVendor = ''
-    [String]$appName = ''
-    [String]$appVersion = ''
+    [String]$appVendor = 'HP'
+    [String]$appName = 'Product Bulletin'
+    [String]$appVersion = '8.0'
     [String]$appArch = ''
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = 'xx/xx/2024'
+    [String]$appScriptDate = '11/12/2024'
     [String]$appScriptAuthor = 'Michiel Dekker'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
@@ -206,6 +206,7 @@ Try {
 
         ## TODO <Perform Installation tasks here>
 
+        Execute-Process -Path "$dirfiles\hppb_installer.exe" -Parameters '/install' -WindowStyle 'Hidden'
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -249,6 +250,8 @@ Try {
         }
 
         ## TODO <Perform Uninstallation tasks here>
+
+        Execute-Process -Path "C:\Program Files (x86)\HPE Product Bulletin\Product Bulletin.exe" -Parameters '-uninstall' -WindowStyle 'Hidden'
 
 
         ##*===============================================
