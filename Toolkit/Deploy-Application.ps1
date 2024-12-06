@@ -106,14 +106,14 @@ Try {
     ##* VARIABLE DECLARATION
     ##*===============================================
     ## TODO Variables: Application
-    [String]$appVendor = ''
-    [String]$appName = ''
+    [String]$appVendor = 'Microsoft'
+    [String]$appName = 'Remote Help'
     [String]$appVersion = ''
     [String]$appArch = ''
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = 'xx/xx/2024'
+    [String]$appScriptDate = '06/12/2024'
     [String]$appScriptAuthor = 'Michiel Dekker'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
@@ -206,6 +206,7 @@ Try {
 
         ## TODO <Perform Installation tasks here>
 
+        Execute-process -path "$dirfiles\remotehelpinstaller.exe" -parameters '/quiet acceptTerms=1'
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -250,6 +251,7 @@ Try {
 
         ## TODO <Perform Uninstallation tasks here>
 
+        Execute-process -path "$dirfiles\remotehelpinstaller.exe" -parameters '/uninstall /quiet acceptTerms=1'
 
         ##*===============================================
         ##* POST-UNINSTALLATION
