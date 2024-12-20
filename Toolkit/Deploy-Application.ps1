@@ -188,6 +188,7 @@ Try {
 
         ## TODO <Perform Pre-Installation tasks here>
 
+        Execute-Process -Path "$dirfiles\windowsdesktop-runtime-8.0.10-win-x64.exe" -Parameters "/install /quiet /norestart"
 
         ##*===============================================
         ##* INSTALLATION
@@ -206,7 +207,7 @@ Try {
 
         ## TODO <Perform Installation tasks here>
 
-        Execute-Process -Path "$dirfiles\CLIENT_{exiteict.printix.net}_{4a619ae6-4a2a-48e0-8f1d-2ca1038922b5}.EXE" -Parameters '/NORESTART /RESTARTAPPLICATIONS'
+        Execute-MSI -FilePath "$dirFiles\CLIENT_{exiteict.printix.net}_{4a619ae6-4a2a-48e0-8f1d-2ca1038922b5}.MSI" -Parameters 'WRAPPED_ARGUMENTS=/id:4a619ae6-4a2a-48e0-8f1d-2ca1038922b5'
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -235,7 +236,7 @@ Try {
 
         ## TODO <Perform Pre-Uninstallation tasks here>
 
-        Execute-Process - path "C:\Program Files\printix.net\Printix Client\unins000.exe /verysilent"
+        Execute-Process - path "C:\Program Files\printix.net\Printix Client\unins000.exe" -Parameters  '/verysilent'
 
         ##*===============================================
         ##* UNINSTALLATION
