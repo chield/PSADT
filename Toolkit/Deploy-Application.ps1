@@ -106,14 +106,14 @@ Try {
     ##* VARIABLE DECLARATION
     ##*===============================================
     ## TODO Variables: Application
-    [String]$appVendor = ''
-    [String]$appName = ''
-    [String]$appVersion = ''
+    [String]$appVendor = 'Tungsten'
+    [String]$appName = 'Printix Client - Enschede'
+    [String]$appVersion = '2025.1.0.126'
     [String]$appArch = ''
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = 'xx/xx/2024'
+    [String]$appScriptDate = '20/12/2024'
     [String]$appScriptAuthor = 'Michiel Dekker'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
@@ -206,6 +206,7 @@ Try {
 
         ## TODO <Perform Installation tasks here>
 
+        Execute-Process -Path "$dirfiles\CLIENT_{exiteict.printix.net}_{4a619ae6-4a2a-48e0-8f1d-2ca1038922b5}.EXE" -Parameters '/NORESTART /RESTARTAPPLICATIONS'
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -234,6 +235,7 @@ Try {
 
         ## TODO <Perform Pre-Uninstallation tasks here>
 
+        Execute-Process - path "C:\Program Files\printix.net\Printix Client\unins000.exe /verysilent"
 
         ##*===============================================
         ##* UNINSTALLATION
