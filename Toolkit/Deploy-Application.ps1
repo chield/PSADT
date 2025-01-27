@@ -106,14 +106,14 @@ Try {
     ##* VARIABLE DECLARATION
     ##*===============================================
     ## TODO Variables: Application
-    [String]$appVendor = ''
-    [String]$appName = ''
-    [String]$appVersion = ''
+    [String]$appVendor = 'Magic'
+    [String]$appName = 'Utilities'
+    [String]$appVersion = '3.1.5.6'
     [String]$appArch = ''
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = 'xx/xx/2024'
+    [String]$appScriptDate = '24/01/2025'
     [String]$appScriptAuthor = 'Michiel Dekker'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
@@ -206,6 +206,7 @@ Try {
 
         ## TODO <Perform Installation tasks here>
 
+        Execute-Process -Path "$dirfiles\MagicUtilities-Setup-3.1.5.6-Win10.exe" -Parameters '/VERYSILENT /COMPONENTS=MagicKeyboard,MagicTrackpad" /NORESTART/SUPRESSMSGBOXES /NORESTART'
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -234,6 +235,7 @@ Try {
 
         ## TODO <Perform Pre-Uninstallation tasks here>
 
+        Execute-Process -Path "C:\Program Files\MagicUtilities\Uninstall\unins000.exe" -Parameters '/VERYSILENT /NORESTART'
 
         ##*===============================================
         ##* UNINSTALLATION
