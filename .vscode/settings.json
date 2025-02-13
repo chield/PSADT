@@ -33,7 +33,7 @@
                 "-NoLogo",
                 "-NoExit",
                 "-ExecutionPolicy",
-                "RemoteSigned",
+                "RemoteSigned"
             ]
         },
         "Git Bash": null,
