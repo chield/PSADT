@@ -106,14 +106,14 @@ Try {
     ##* VARIABLE DECLARATION
     ##*===============================================
     ## TODO Variables: Application
-    [String]$appVendor = ''
-    [String]$appName = ''
-    [String]$appVersion = ''
+    [String]$appVendor = 'Salto'
+    [String]$appName = 'LocalIOBridge'
+    [String]$appVersion = '1.3.1.0'
     [String]$appArch = ''
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = 'xx/xx/2024'
+    [String]$appScriptDate = '08/05/2025'
     [String]$appScriptAuthor = 'Michiel Dekker'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
@@ -206,6 +206,7 @@ Try {
 
         ## TODO <Perform Installation tasks here>
 
+        Execute-process -Path "$dirFiles\Setup_SaltoLocalIOBridge.exe" -Parameters '-quiet -InstallDir="C:\Salto\Local IO Bridge"'
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -250,6 +251,7 @@ Try {
 
         ## TODO <Perform Uninstallation tasks here>
 
+        Execute-process -Path "$dirFiles\Setup_SaltoLocalIOBridge.exe" -Parameters '-uninstall -quiet'
 
         ##*===============================================
         ##* POST-UNINSTALLATION
